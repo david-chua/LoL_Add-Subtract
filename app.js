@@ -39,7 +39,7 @@ function resetBoard(){
 
 //score points assigned to each sticker
 var score = 0;
-$(.board).on("click", "span", function(evt){
+$(".board").on("click", "span", function(evt){
   if (evt.target.src === annie) {
     score = score + 1;
   } else if (evt.target.src === braum) {
@@ -57,6 +57,6 @@ $(.board).on("click", "span", function(evt){
   $(evt.target).hide(500, function(){
     $(evt.target).remove();
     console.log(score);
-    console.log('scorePoints').text(score));
+    console.log($('scorePoints').text(score));
   });
 });

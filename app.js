@@ -60,3 +60,35 @@ $(".board").on("click", "span", function(evt){
     console.log($('scorePoints').text(score));
   });
 });
+
+//created target score goals:
+var targetScore = {
+  level1: 113,
+  level2: 154,
+  level3: 201,
+  level4: 168,
+  level5: 179,
+  level6: 196,
+  level7: 208
+};
+
+
+function clearAllIntervals(){
+  var lastId = setInterval(null, 5000)
+  for (var i = 0; i <= lastId; i++){
+    clearInterval(i)
+  }
+};
+
+function startTimer(duration, display) {
+  clearAllIntervals()
+  timer = duration, minutes, seconds;
+
+  var Interval = setInterval(function() {
+    minutes = parseInt(timer/ 60, 10);
+    seconds = parseInt(timer % 60, 10);
+    minutes = minutes <10 ? "0" + minutes : minutes;
+    seconds = seconds <10 ? "0" + seconds : seconds;
+    display.text(minutes + ":" + seconds);
+  })
+}

@@ -62,33 +62,153 @@ $(".board").on("click", "span", function(evt){
 });
 
 //created target score goals:
-var targetScore = {
-  level1: 113,
-  level2: 154,
-  level3: 201,
-  level4: 168,
-  level5: 179,
-  level6: 196,
-  level7: 208
+  var targetScore = {
+    levelOne: 113,
+    levelTwo: 154,
+    levelThree: 201,
+    levelFour: 168,
+    levelFive: 179,
+    levelSix: 196,
+    levelSeven: 208
+  };
+
+
+  function clearAllIntervals(){
+    var lastId = setInterval(null, 5000)
+    for (var i = 0; i <= lastId; i++){
+      clearInterval(i)
+    }
+  };
+
+  function startTimer(duration, display) {
+    clearAllIntervals()
+    timer = duration, minutes, seconds;
+
+    var interval = setInterval(function() {
+      minutes = parseInt(timer/ 60, 10);
+      seconds = parseInt(timer % 60, 10);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display.text(minutes + ":" + seconds);
+
+      if (score === 113 && level === "one") {
+        clearInterval(interval);
+        console.log(clearInterval);
+        winLevelOne();
+      } else if (score > 113 && level === "one") {
+        clearInterval(interval);
+        console.log(clearInterval);
+        youLose();
+      }
+      if (score === 154 && level === "two") {
+        winLevelTwo();
+      } else if (score > 154 && level === "two") {
+        youLose();
+      }
+      if (score === 201 && level === "three") {
+        winLevelThree();
+      } else if (score > 201 && level === "three") {
+        youLose();
+      }
+      if (score === 168 && level === "four") {
+        winLevelFour();
+      } else if (score > 168 && level === "four") {
+        youLose();
+      }
+      if (score === 179 && level === "five") {
+        winLevelFive();
+      } else if (score > 179 && level === "five") {
+        youLose();
+      }
+      if (score === 196 && level === "six") {
+        winLevelSix();
+      } else if (score > 196 && level === "six") {
+        youLose();
+      }
+      if (score === 208 && level === "seven") {
+        winLevelSeven();
+      } else if (score > 208 && level === "seven") {
+        youLose();
+      };
+
+      if (--timer <0) {
+        timer = 0;
+        if (score === targetScore.levelOne && level === "one") {
+          winLevelOne();
+        } else if (score !== targetScore.levelOne && level === "one") {
+          youLose();
+        }
+        if (score === targetScore.levelTwo && level === "two") {
+          winLevelOne();
+        } else if (score !== targetScore.levelTwo && level === "two") {
+          youLose();
+        }
+        if (score === targetScore.levelThree && level === "three") {
+          winLevelOne();
+        } else if (score !== targetScore.levelThree && level === "three") {
+          youLose();
+        }
+        if (score === targetScore.levelFour && level === "four") {
+          winLevelOne();
+        } else if (score !== targetScore.levelFour && level === "four") {
+          youLose();
+        }
+        if (score === targetScore.levelFive && level === "five") {
+          winLevelOne();
+        } else if (score !== targetScore.levelFive && level === "five") {
+          youLose();
+        }
+        if (score === targetScore.levelSix && level === "six") {
+          winLevelOne();
+        } else if (score !== targetScore.levelSix && level === "six") {
+          youLose();
+        }
+        if (score === targetScore.levelSeven && level === "seven") {
+          winLevelOne();
+        } else if (score !== targetScore.levelSeven && level === "seven") {
+          youLose();
+        };
+      };
+  }, 1000);
 };
 
+display = $('timer');
 
-function clearAllIntervals(){
-  var lastId = setInterval(null, 5000)
-  for (var i = 0; i <= lastId; i++){
-    clearInterval(i)
-  }
-};
+// Instruction Window
+  $('#zero').click(function() {
+    $('instructions').hide();
+    levelOne();
+  });
 
-function startTimer(duration, display) {
-  clearAllIntervals()
-  timer = duration, minutes, seconds;
+  //popup level 1
+  function levelOne() {
+    $('#popupOne').show();
+    $('#first').click(function(){
+      $('#popupOne').hide();
+      $('#scoreOne').show();
+      test = [];
+      resetLand();
+      level="one";
+      score=0;
+      Gameboard();
+      startTimer(60, display);
+    });
+  };
 
-  var Interval = setInterval(function() {
-    minutes = parseInt(timer/ 60, 10);
-    seconds = parseInt(timer % 60, 10);
-    minutes = minutes <10 ? "0" + minutes : minutes;
-    seconds = seconds <10 ? "0" + seconds : seconds;
-    display.text(minutes + ":" + seconds);
-  })
-}
+  //popup Level 2
+  function youLose() {
+    $('.restartOne').show();
+    $('#restart').click(function() {
+      $('#scoreOne').hide();
+      $('#scoreTwo').hide();
+      $('#scoreThree').hide();
+      $('#scoreFour').hide();
+      $('#scoreFive').hide();
+      $('#scoreSix').hide();
+      $('#scoreSeven').hide();
+      $('.restartOne').hide();
+      score = 0;
+      levelOne();
+    });
+  };
+  

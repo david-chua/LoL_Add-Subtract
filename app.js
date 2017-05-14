@@ -56,7 +56,7 @@ $("#board").on("click", "span", function(evt){
   $(evt.target).hide(500, function(){
     $(evt.target).remove();
     console.log(score);
-    console.log($('scorePoints').text(score));
+    console.log($('#scorePoints').text(score));
   });
 });
 
@@ -175,7 +175,7 @@ display = $('timer');
 
 // Instruction Window
   $('#zero').click(function() {
-    $('instructions').hide();
+    $('#instructions').hide();
     levelOne();
   });
 
@@ -186,7 +186,7 @@ display = $('timer');
       $('#popupOne').hide();
       $('#scoreOne').show();
       test = [];
-      resetLand();
+      resetBoard();
       level="one";
       score=0;
       Gameboard();

@@ -1,5 +1,107 @@
-h1 {
-  font-size: 3em;
+body {
+  background-image: url("https://www.walldevil.com/wallpapers/a92/legends-league-typography-logo-lol-wallpaper-videogames-fullhdwpp.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 1300px;
+  background-position: center;
+  background-attachment: fixed;
+}
+.col-md-12 {
+  margin-left: 26%;
+  margin-top: 2%;
+  margin-right: auto;
+}
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.picture {
+  width: 40px;
+  height: 40px;
+  opacity: .7;
+  margin-left: 50px;
+}
+.piece {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+#board {
+  margin-left: 120px;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 550px;
+  height: 480px;
+  display: inline-block;
+  float: left;
+  background-color: white;
+  opacity: .8;
+  padding: 20px;
+}
+div.noSelect {
+  display: inline;
+}
+#sideDiv {
+  display: block;
+  float: right;
+  border: 1px solid white;
+  ;
+  width: 350px;
+  height: 480px;
+  margin-right: 100px;
+  background-color: white;
+  opacity: .8;
+  margin-top: 30px;
+}
+#clock {
+  width: 322px;
+  height: 150px;
+  display: block;
   text-align: center;
-  font-style: italic;
+  margin-top: 10px;
+  font-size: 30px;
+}
+#score, #scoreGoal {
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  margin-top: -10px;
+}
+
+#scoreOne, #scoreTwo, #scoreThree, #scoreFour, #scoreFive, #scoreSix, #scoreSeven {
+  font-size: 80px;
+  display: none;
+}
+.title {
+  text-align: center;
+  font-size: 90px;
+  color: black;
+  margin: 10px;
+  font-family: 'Bungee Shade', cursive;
+  opacity: .7;
+}
+#scorePoints {
+  margin-top: 5px;
+  font-size: 90px;
+}
+.timer {
+  font-size: 80px;
+}
+#instructions, #popupOne, #popupTwo, #popupThree, #popupFour, #popupFive, #popupSix, #popupSeven, #popupWin, .restartOne {
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  width: 600px;
+  height: 200px;
+  background: white;
+  opacity: 0.9;
+  padding: 10px;
+  text-align: center;
+}
+.fa-remove:before, .fa-close:before, .fa-times:before {
+  margin-left: 500px;
 }

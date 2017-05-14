@@ -1,7 +1,6 @@
 console.log("javascript is working")
 
 var level;
-
 // Clock Countdown
 var timer;
 var minutes;
@@ -39,7 +38,7 @@ function resetBoard(){
 
 //score points assigned to each sticker
 var score = 0;
-$(".board").on("click", "span", function(evt){
+$("#board").on("click", "span", function(evt){
   if (evt.target.src === annie) {
     score = score + 1;
   } else if (evt.target.src === braum) {
@@ -211,4 +210,116 @@ display = $('timer');
       levelOne();
     });
   };
-  
+
+// popup window level 2
+  function winLevelOne() {
+    timer = 0;
+    $('#popupTwo').show();
+    $('#second').click(function(){
+      $('popupTwo').hide();
+      $('#scoreOne').hide();
+      $('#scoreTwo').show();
+      startTimer(60, display);
+      test = [];
+      resetLand();
+      level= "two";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+
+//popup level 3
+  function winLevelTwo() {
+    timer = 0;
+    $('#popupThree').show();
+    $('#third').click(function(){
+      $('popupThree').hide();
+      $('#scoreTwo').hide();
+      $('#scoreThree').show();
+      startTimer(50, display);
+      test = [];
+      resetLand();
+      level= "three";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+  function winLevelThree() {
+    timer = 0;
+    $('#popupFour').show();
+    $('#fourth').click(function(){
+      $('popupFour').hide();
+      $('#scoreThree').hide();
+      $('#scoreFour').show();
+      startTimer(45, display);
+      test = [];
+      resetLand();
+      level= "four";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+  function winLevelFour() {
+    timer = 0;
+    $('#popupFive').show();
+    $('#fifth').click(function(){
+      $('popupFive').hide();
+      $('#scoreFour').hide();
+      $('#scoreFive').show();
+      startTimer(40, display);
+      test = [];
+      resetLand();
+      level= "five";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+  function winLevelFive() {
+    timer = 0;
+    $('#popupSix').show();
+    $('#sixth').click(function(){
+      $('popupSix').hide();
+      $('#scoreFive').hide();
+      $('#scoreSix').show();
+      startTimer(30, display);
+      test = [];
+      resetLand();
+      level= "six";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+  function winLevelSix() {
+    timer = 0;
+    $('#popupSeven').show();
+    $('#seventh').click(function(){
+      $('popupSeven').hide();
+      $('#scoreSix').hide();
+      $('#scoreSeven').show();
+      startTimer(20, display);
+      test = [];
+      resetLand();
+      level= "seven";
+      score = 0;
+      Gameboard();
+    });
+  };
+
+  function winLevelSeven() {
+    timer = 0;
+    $('#popupWin').show();
+    $('#win').click(function(){
+      $('scoreSeven').hide();
+      $('#popupWin').hide();
+      levelOne();
+      test = [];
+      resetLand();
+      score = 0;
+      Gameboard();
+    });
+  };
